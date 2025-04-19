@@ -1,0 +1,76 @@
+﻿<Window x:Class="lab05_aldana.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab05_aldana"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Fila 1: Controles de entrada -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="ID Cliente:"/>
+                <TextBox Name="txtIdCliente" Width="100"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="Nombre Compañía:"/>
+                <TextBox Name="txtNombreCompania" Width="150"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="Contacto:"/>
+                <TextBox Name="txtNombreContacto" Width="150"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="Cargo:"/>
+                <TextBox Name="txtCargoContacto" Width="150"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10">
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="Dirección:"/>
+                <TextBox Name="txtDireccion" Width="150"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="Ciudad:"/>
+                <TextBox Name="txtCiudad" Width="100"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="Región:"/>
+                <TextBox Name="txtRegion" Width="100"/>
+            </StackPanel>
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="País:"/>
+                <TextBox Name="txtPais" Width="100"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Botones de acción -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,90,0,10">
+            <Button Content="Insertar" Width="100" Margin="0,0,10,0" Click="InsertarCliente_Click"/>
+            <Button Content="Modificar" Width="100" Margin="0,0,10,0" Click="ModificarCliente_Click"/>
+            <Button Content="Eliminar" Width="100" Margin="0,0,10,0" Click="EliminarCliente_Click"/>
+
+        </StackPanel>
+
+
+
+        <!-- DataGrid para mostrar los resultados -->
+        <DataGrid 
+     Name="showClients" 
+     Grid.Row="2" 
+     Margin="0,0,0,0" 
+     AutoGenerateColumns="True"
+     Height="300"
+     SelectionMode="Single"
+    
+ />
+    </Grid>
+</Window>
